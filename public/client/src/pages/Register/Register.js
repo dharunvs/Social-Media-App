@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Register.css';
 import Axios from 'axios';
 
 function Register() {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     const register = () => {
-        Axios.post("http://localhost:3001/user/register")
+        Axios.post("http://localhost:3001/user/register", {username: username, password: password}).then((response) => {
+            console.log(response);
+        })
     }
 
     return (
@@ -27,7 +29,7 @@ function Register() {
                     onChange={(event) => {
                         setPassword(event.target.value);
                 }}/>
-                <button>Register</button>
+                <button onClick={register}>Register</button>
             </div>
         </div>
     )
