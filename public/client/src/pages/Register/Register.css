@@ -1,43 +1,41 @@
-.Register{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.Register {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .RegisterForm {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
 }
 
-.RegisterForm h2{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
+.RegisterForm h2 {
+  text-align: center;
 }
 
-.RegisterForm input,button {
-    margin: 10px;
-    outline: none;
-    height: 50px;
-    font-size: 1.2rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.RegisterForm input,
+button {
+  margin: 10px;
+  outline: none;
+  height: 50px;
+  font-size: 1.2rem;
 }
 
-.RegisterForm input{
-    padding: 0 20px;
+.RegisterForm input {
+  padding: 0 20px;
 }
 
-.RegisterForm button{
-    outline: none;
-    border: none;
-    background-color: rgb(140, 0, 255);
-    color: white;
-    cursor: pointer;
+.RegisterForm button {
+  outline: none;
+  border: none;
+  background-color: rgb(140, 0, 255);
+  color: white;
+  cursor: pointer;
 }
 
-.RegisterForm button:hover{
-    background-color: rgb(99, 0, 180);
-    
+.RegisterForm button:hover {
+  background-color: rgb(99, 0, 180);
 }
