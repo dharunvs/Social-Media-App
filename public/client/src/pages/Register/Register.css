@@ -9,12 +9,35 @@
 .RegisterForm {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 400px;
+}
+
+.RegisterForm h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
 }
 
 .RegisterForm input,button {
     margin: 10px;
     outline: none;
     height: 50px;
-    width: 100%;
+    font-size: 1.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.RegisterForm input{
+    padding: 0 20px;
+}
+
+.RegisterForm button{
+    outline: none;
+    border: none;
+    background-color: rgb(140, 0, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.RegisterForm button:hover{
+    background-color: rgb(99, 0, 180);
+    
 }
