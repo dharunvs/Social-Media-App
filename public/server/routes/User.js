@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const cors = require('cors');
 
 const db = require('../config/db');
 
-router.get('/register', (req, res) => {
+router.post('/register', (req, res) => {
 
     const username = req.body.username;
     const password = req.body.password;
@@ -15,6 +14,14 @@ router.get('/register', (req, res) => {
         res.send(results)
     }
     )
+})
+
+router.post('/login', (req, res) => {
+
+    const username = req.body.username;
+    const password = req.body.password;
+
+    res.send(username+" is logged in with password: "+password)
 })
 
 module.exports = router;

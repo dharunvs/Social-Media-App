@@ -4,11 +4,11 @@ import Axios from 'axios';
 
 function Register() {
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-
+    const [Username, setUsername] = useState("");
+    const [Password, setPassword] = useState("");
+    
     const register = () => {
-        Axios.post("http://localhost:3001/user/register", {username: username, password: password}).then((response) => {
+        Axios.post("http://localhost:3001/user/register", {username: Username, password: Password}).then((response) => {
             console.log(response);
         })
     }
