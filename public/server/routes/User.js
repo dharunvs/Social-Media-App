@@ -21,7 +21,7 @@ router.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    res.send(username+" is logged in with password: "+password)
+    res.send(username)
 })
 
 module.exports = router;
