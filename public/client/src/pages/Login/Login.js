@@ -7,9 +7,15 @@ function Login() {
     const [Username, setUsername] = useState("");
     const [Password, setPassword] = useState("");
 
+    const [ErrorMessage, setErrorMessage] = useState("");
     const login = () => {
         Axios.post("http://localhost:3001/user/login", {username: Username, password:Password}).then((response) => {
-            console.log(response)
+            if (response.data.loggedIn){
+                localStorage.setItem("loggedIn", true);
+                localStorage.setItem("username", response.data.username) 
+            } else {
+                setErrorMessage(response.data.message)
+            }
         })
     }
     return (

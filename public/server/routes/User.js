@@ -30,14 +30,14 @@ router.post('/login', (req, res) => {
             if (errors){
                 console.log(errors)
             }
-            if (results){
+            if (results.length > 0){
                 if (password == results[0].password){
-                    res.send("You are logged in!")
+                    res.json({loggedIn: true, username: username})
                 } else {
-                    res.send("Wrong password!")
+                    res.json({loggedIn: false, message: "Wrong password"})
                 }
             } else {
-                res.send("Invalid username!")
+                res.json({loggedIn: false, message: "Invalid username"})
             }
     }
     )
