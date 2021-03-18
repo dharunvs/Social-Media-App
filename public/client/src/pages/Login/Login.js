@@ -37,6 +37,7 @@ function Login() {
                     }}
                 />
                 <button onClick={login}>Login</button>
+                <h2 style={{color: "red"}}>{ErrorMessage}</h2>
             </div>
         </div>
     )
