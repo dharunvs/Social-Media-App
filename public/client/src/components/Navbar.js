@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 
 function Navbar() {
+
+    const [Loggedin, setLoggedIn] = useState(false);
+    
+    useEffect(() => {
+        setLoggedIn(localStorage.getItem("loggedIn"))
+    }, [localStorage.getItem("loggedIn")])
+
     return (
         <div className="Navbar">
             <a href="/">Home</a>
-            <a href="/register">Register</a>
-            <a href="/login">Log in</a>
-        </div>
+
+            {!Loggedin ?(
+                <>
+                <a href="/register">Register</a>
+                <a href="/login">Log in</a>
+                </>
+            ) : (
+                <>
+                <a href="/profile">Profile</a>
+                </>
+            )}
+            
+        </div>  
     )
 }
 
