@@ -39,7 +39,6 @@ router.post('/login', (req, res) => {
             } else {
                 res.send("Invalid username!")
             }
-            res.send(results)
     }
     )
 })
