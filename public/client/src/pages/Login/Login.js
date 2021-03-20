@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './Login.css';
 import Axios from 'axios';
 
@@ -7,12 +8,15 @@ function Login() {
     const [Username, setUsername] = useState("");
     const [Password, setPassword] = useState("");
 
+    let history = useHistory();
+
     const [ErrorMessage, setErrorMessage] = useState("");
     const login = () => {
         Axios.post("http://localhost:3001/user/login", {username: Username, password:Password}).then((response) => {
             if (response.data.loggedIn){
                 localStorage.setItem("loggedIn", true);
                 localStorage.setItem("username", response.data.username) 
+                history.push('/')
             } else {
                 setErrorMessage(response.data.message)
             }

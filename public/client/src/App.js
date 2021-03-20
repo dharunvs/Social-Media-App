@@ -4,7 +4,7 @@ import Home from './pages/Home/Home';
 import Register from './pages/Register/Register'
 import Login from './pages/Login/Login'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import Upload from './pages/Upload/Upload';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
       <Route path='/' exact render={() => <Home />} />
       <Route path='/register' exact render={() => <Register />} />
       <Route path='/login' exact render={() => <Login />} />
+      <Route path='/upload' exact render={() => <Upload />} />
     </Router>
-    <Footer />
     </>
   );
 }
