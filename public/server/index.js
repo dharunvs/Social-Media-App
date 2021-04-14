@@ -1,13 +1,15 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const cors = require('cors');
+const cors = require("cors");
 
-app.use(cors());2 
+const port = 3001;
+
+app.use(cors());
 app.use(express.json());
 
-const userRoute = require('./routes/User');
-app.use('/user', userRoute);
+const userRoute = require("./routes/User");
+app.use("/user", userRoute);
 
-app.listen(3001, (req, res) => {
-    console.log("Server is running...");
-})  
+app.listen(port, (req, res) => {
+  console.log("Server is running " + port);
+});
