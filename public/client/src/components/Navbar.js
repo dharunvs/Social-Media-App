@@ -17,6 +17,7 @@ function Navbar() {
           <a href="/upload">Upload</a>
           <a href="/profile">Profile</a>
           <a href="/register">Register</a>
+          <a href="/login">Log in</a>
         </>
       ) : (
         <>

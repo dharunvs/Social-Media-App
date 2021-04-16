@@ -1,0 +1,49 @@
+.Upload {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.UploadForm {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.UploadForm h2 {
+  text-align: center;
+}
+
+.UploadForm input,
+.UploadForm textarea,
+.UploadForm button {
+  margin: 10px;
+  outline: none;
+  font-size: 1.2rem;
+  resize: none;
+}
+
+.UploadForm input,
+.UploadForm textarea {
+  padding: 10px;
+}
+
+.UploadForm button {
+  outline: none;
+  border: none;
+  background-color: rgb(140, 0, 255);
+  color: white;
+  cursor: pointer;
+}
+
+.UploadForm button:hover {
+  background-color: rgb(99, 0, 180);
+}
+
+/* .UploadForm .UploadFile {
+  width: 100%;
+  background-color: rebeccapurple;
+
+} */
