@@ -1,32 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import './Navbar.css'
+import React, { useState, useEffect } from "react";
+import "./Navbar.css";
 
 function Navbar() {
+  const [Loggedin, setLoggedIn] = useState(true);
 
-    const [Loggedin, setLoggedIn] = useState(true);
+  useEffect(() => {
+    setLoggedIn(localStorage.getItem("loggedIn"));
+  }, [localStorage.getItem("loggedIn")]);
 
-    useEffect(() => {
-        setLoggedIn(localStorage.getItem("loggedIn"))
-    }, [localStorage.getItem("loggedIn")])
+  return (
+    <div className="Navbar">
+      <a href="/">Home</a>
 
-    return (
-        <div className="Navbar">
-            <a href="/">Home</a>
-
-            {Loggedin ?(
-                <>
-                <a href="/upload">Upload</a>
-                <a href="/profile">Profile</a>
-                </>
-            ) : (
-                <>
-                <a href="/register">Register</a>
-                <a href="/login">Log in</a>
-                </>
-            )}
-            
-        </div>  
-    )
+      {Loggedin ? (
+        <>
+          <a href="/upload">Upload</a>
+          <a href="/profile">Profile</a>
+          <a href="/register">Register</a>
+        </>
+      ) : (
+        <>
+          <a href="/register">Register</a>
+          <a href="/login">Log in</a>
+        </>
+      )}
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;
