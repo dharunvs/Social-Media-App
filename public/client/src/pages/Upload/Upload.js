@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Upload.css";
+import Axios from "axios";
 
 function Upload() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState([]);
+
+  function upload() {
+    const imageData = new FormData();
+    imageData.append("file", image);
+  }
+
   return (
     <div className="Upload">
       <div className="UploadForm">
@@ -13,8 +23,14 @@ function Upload() {
           onChange={() => {}}
           rows="4"
         />
-        <input className="UploadFile" type="file" />
-        <button onClick={() => {}}>Register</button>
+        <input
+          className="UploadFile"
+          type="file"
+          onChange={(e) => {
+            setImage(e.target.files);
+          }}
+        />
+        <button onClick={() => {}}>Post</button>
       </div>
     </div>
   );
