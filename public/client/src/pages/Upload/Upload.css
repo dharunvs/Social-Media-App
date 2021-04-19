@@ -37,8 +37,3 @@
 .UploadForm button:hover {
   background-color: rgb(99, 0, 180);
 }
-
-.UploadForm .UploadFile {
-  background-color: red;
-  cursor: pointer;
-}

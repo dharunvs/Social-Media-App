@@ -8,8 +8,21 @@ function Upload() {
   const [image, setImage] = useState([]);
 
   function upload() {
-    const imageData = new FormData();
-    imageData.append("file", image);
+    const formData = new FormData();
+    formData.append("file", image[0]);
+    formData.append("upload_preset", "gaciqzb6");
+
+    Axios.get("https://api.cloudinary.com/v1_1/dharun/samples", {
+      headers: {
+        "Access-Control-Allow-Origin": true,
+      },
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (
@@ -30,7 +43,8 @@ function Upload() {
             setImage(e.target.files);
           }}
         />
-        <button onClick={() => {}}>Post</button>
+
+        <button onClick={upload}>Post</button>
       </div>
     </div>
   );
