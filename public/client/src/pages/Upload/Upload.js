@@ -28,11 +28,19 @@ function Upload() {
     <div className="Upload">
       <div className="UploadForm">
         <h2>Create A Post</h2>
-        <input type="text" placeholder="Title" onChange={() => {}} />
+        <input
+          type="text"
+          placeholder="Title"
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+        />
         <textarea
           type="password"
           placeholder="Description"
-          onChange={() => {}}
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
           rows="4"
         />
         <input
