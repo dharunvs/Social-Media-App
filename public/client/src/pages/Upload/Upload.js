@@ -15,7 +15,11 @@ function Upload() {
     Axios.post("https://api.cloudinary.com/v1_1/dharun/samples", formData).then(
       (res) => {
         const fileName = res.data.public_id;
-        Axios.post("http://localhost");
+        Axios.post("http://localhost:3001/upload", {
+          title: title,
+          description: description,
+          image: fileName,
+        });
       }
     );
   }
