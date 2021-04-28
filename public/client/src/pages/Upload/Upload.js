@@ -12,6 +12,8 @@ function Upload() {
     formData.append("file", image[0]);
     formData.append("upload_preset", "gaciqzb6");
 
+    Axios.defaults.headers.post["Content-Type"] =
+      "application/x-www-form-urlencoded";
     Axios.post(
       "https://api.cloudinary.com/v1_1/dharun/social-media-app",
       formData
