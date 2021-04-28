@@ -12,16 +12,17 @@ function Upload() {
     formData.append("file", image[0]);
     formData.append("upload_preset", "gaciqzb6");
 
-    Axios.post("https://api.cloudinary.com/v1_1/dharun/samples", formData).then(
-      (res) => {
-        const fileName = res.data.public_id;
-        Axios.post("http://localhost:3001/upload", {
-          title: title,
-          description: description,
-          image: fileName,
-        });
-      }
-    );
+    Axios.post(
+      "https://api.cloudinary.com/v1_1/dharun/social-media-app",
+      formData
+    ).then((res) => {
+      const fileName = res.data.public_id;
+      Axios.post("http://localhost:3001/upload", {
+        title: title,
+        description: description,
+        image: fileName,
+      });
+    });
   }
 
   return (
